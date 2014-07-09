@@ -2,7 +2,7 @@
 
 I am putting this here for (my) future reference.
 
-There scripts that generate the plots are all named `plotN.R` where
+The scripts that generate the plots are all named `plotN.R` where
 `N = {1,2,3,4}`. 
 
 The code for reading and pre-processing the data needed for the plots is
