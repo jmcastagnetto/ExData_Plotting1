@@ -10,7 +10,7 @@ in the file `read-data.R`, and it reads only the lines that are needed for
 this assignment (records from 2007-02-01 and 2007-02-02). This file is
 sourced in each of the other plot generating scripts.
 
-In view of the data file size and the suggestion given for this assignmente,
+In view of the data file size and the suggestion given for this assignment,
 I tested two strategies to obtain the data for the plots:
 
 1. Reading all the data file, and then subsetting to get only the records I needed
