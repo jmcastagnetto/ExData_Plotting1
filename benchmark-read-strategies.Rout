@@ -17,8 +17,6 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-[Previously saved workspace restored]
-
 > load_and_subset <- function (zipfile, txtfile, return_subset=TRUE) {
 +     dat <- read.table(unz(zipfile, txtfile), header = TRUE, sep = ";",
 +                       na.strings = "?", stringsAsFactors=FALSE)
@@ -58,7 +56,7 @@ Type 'q()' to quit R.
 > # Baseline, only reading the data w/o subsetting
 > system.time({dat0 <- load_and_subset(zipfile, txtfile, FALSE)})
    user  system elapsed 
- 21.409   0.376  21.856 
+ 24.361   0.356  24.826 
 > # Memory size for all data
 > object.size(dat0)
 240733968 bytes
@@ -66,7 +64,7 @@ Type 'q()' to quit R.
 > # Reading all the data file and then subsetting
 > system.time({dat1 <- load_and_subset(zipfile, txtfile)})
    user  system elapsed 
- 19.265   0.112  19.437 
+ 22.805   0.100  23.052 
 > # Memory size for the subset
 > object.size(dat1)
 337968 bytes
@@ -74,7 +72,7 @@ Type 'q()' to quit R.
 > # Reading only the lines that are needed
 > system.time({dat2 <- load_selected_lines(zipfile, txtfile, colnames, start, end)})
    user  system elapsed 
-  0.232   0.004   0.234 
+  0.240   0.000   0.243 
 > # Memory size for data from selected lines
 > object.size(dat2)
 337968 bytes
@@ -85,4 +83,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
- 42.438   0.584  43.555 
+ 47.662   0.492  48.405 

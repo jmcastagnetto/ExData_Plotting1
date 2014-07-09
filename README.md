@@ -19,8 +19,8 @@ I tested two strategies to obtain the data for the plots:
 In both cases the data file was read directly from the zip container.
 
 Running a quick and dirty benchmark (see `benchmark-read-strategies.R`), I got 
-that using the first one above took 20.777 seconds on my desktop, whereas the 
-second strategy run in 0.236 seconds (~88-fold reduction in running time).
+that using the first one above took 23.052 seconds on my desktop, whereas the 
+second strategy run in 0.243 seconds (~95-fold reduction in running time).
 
 Also there is a big difference in memory consumed. The first strategy creates
 (potentially) two data frames, one using 240733968 bytes (all the data) and
