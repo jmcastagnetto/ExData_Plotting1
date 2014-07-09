@@ -1,3 +1,42 @@
+## About this code
+
+I am putting this here for (my) future reference.
+
+There scripts that generate the plots are all named `plotN.R` where
+`N = {1,2,3,4}`. 
+
+The code for reading and pre-processing the data needed for the plots is
+in the file `read-data.R`, and it reads only the lines that are needed for
+this assignment (records from 2007-02-01 and 2007-02-02). This file is
+sourced in each of the other plot generating scripts.
+
+In view of the data file size and the suggestion given for this assignmente,
+I tested two strategies to obtain the data for the plots:
+
+1. Reading all the data file, and then subsetting to get only the records I needed
+2. Reading only the lines I needed
+
+In both cases the data file was read directly from the zip container.
+
+Running a quick and dirty benchmark (see `benchmark-read-strategies.R`), I got 
+that using the first one above took 20.777 seconds on my desktop, whereas the 
+second strategy run in 0.236 seconds (~88-fold reduction in running time).
+
+Also there is a big difference in memory consumed. The first strategy creates
+(potentially) two data frames, one using 240733968 bytes (all the data) and
+another using 337968 bytes (the subset), for a total = 241071936 bytes (~229.90 MB)
+
+Reading only the lines needed for the plots creates a much small object of
+~0.32 MB (337968 bytes). A reduction of the memory footprint of about 713-fold
+
+*Bottomline* : the second strategy is faster and uses less memory
+
+-- Jesus Castagnetto
+
+---
+
+**Original text from the upstream repo**
+
 ## Introduction
 
 This assignment uses data from
